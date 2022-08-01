@@ -2,6 +2,7 @@ package com.example.weather.logic
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
+import com.example.weather.logic.dao.PlaceDao
 import com.example.weather.logic.model.Place
 import com.example.weather.logic.model.PlaceResponse
 import com.example.weather.logic.model.Weather
@@ -57,4 +58,8 @@ object Repository {
                 }
                 emit(result)
             }
+
+    fun savePlace(place:Place)=PlaceDao.savePlace(place)
+    fun getSavedPlace()=PlaceDao.getSavedPlace()
+    fun isPlaceSaved()=PlaceDao.isPlaceSaved()
 }
